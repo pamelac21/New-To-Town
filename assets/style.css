@@ -1,43 +1,36 @@
-
 .sticky-topbar {
-    width: 100%;
-  }
+  width: 100%;
+}
 
+.header {
+  padding: 20px;
+  text-align: center;
+  background-color: rgb(80, 200, 255);
+  color: black;
+  font-size: 15px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
 
-  .header {
-    padding: 20px;
-    text-align: center;
-    background-color: rgb(80, 200, 255);
-    color: black;
-    font-size: 15px;
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  }
-  
-  .form-label {
-    text: bold;
-  }
-  
-  #restaurantLoc {
-    width: 50%;
-  }
-  
-  .subtitle {
-    font-size: 15px;
-  }
-  
-  .restNear {
-    margin-top: 150px;
-  }
-  
-  .concNear {
-    margin-top: 150px;
-  }
-  
-  .brewNear {
-    margin-top: 150px;
-  } 
-  
-  
+.form-label {
+  text: bold;
+}
 
-  
-  
+#restaurantLoc {
+  width: 50%;
+}
+
+.subtitle {
+  font-size: 15px;
+}
+
+.restNear {
+  margin-top: 150px;
+}
+
+.concNear {
+  margin-top: 150px;
+}
+
+.brewNear {
+  margin-top: 150px;
+}
