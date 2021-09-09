@@ -7,7 +7,6 @@ We want to create a user-friendly application that will allow users moving to a 
 ## ABOUT THE PROJECT
 <img src="./markup.png">
 
-
 ## BUILT WITH
 * ZURB Foundation
 * Server-side APIs
@@ -20,9 +19,9 @@ We want to create a user-friendly application that will allow users moving to a 
 See the issues (GitHub) for a list of proposed changes.
 
 ## AUTHORS
-* Matias A. ~
-* Celeste F. ~
-* Pamela C. ~
+* Matias A. ~ matiasahrensdorf@gmail.com
+* Celeste F. ~ celestefarris@hotmail.com
+* Pamela C. ~ pamelac021@gmail.com
 * Shikelia H. ~ Hagensshik@gmail.com
 
 
