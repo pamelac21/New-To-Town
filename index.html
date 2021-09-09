@@ -4,28 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link type="stylesheet" href="assets\style.css" />
+    
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/style.css" />
     <title>Document</title>
 </head>
+
+
 <body>
+  <div class="header">
+    <h1>New-To-Town</h1>
+    <p>Welcome to the community! Search for a location to find restaurants and other forms of entertainment, in or around your area!
+    </p>
+  </div>
     <nav class="top-bar-container" data-sticky-container>
         <div class="sticky sticky-topbar" data-sticky data-options="anchor: page; marginTop: 0; stickyOn: small;">
           <div class="top-bar">
             <div class="top-bar-left">
               <ul class="dropdown menu" data-dropdown-menu>
-                <li class="menu-text">Site Title</li>
+                <li class="menu-text">Sections</li>
                 <li class="has-submenu">
-                  <a href="#">One</a>
+                  <a href="#">Restaurants</a>
                   <ul class="submenu menu vertical" data-submenu>
-                    <li><a href="#">One</a></li>
-                    <li><a href="#">Two</a></li>
-                    <li><a href="#">Three</a></li>
+                    <li><a href="#">Restaurants</a></li>
+                    <li><a href="#">Concerts</a></li>
+                    <li><a href="#">Breweries</a></li>
                   </ul>
                 </li>
-                <li><a href="#">Two</a></li>
-                <li><a href="#">Three</a></li>
+                <li><a href="#">Concerts</a></li>
+                <li><a href="#">Breweries</a></li>
               </ul>
             </div>
             <div class="top-bar-right">
@@ -37,11 +45,43 @@
           </div>
         </div>
     </nav>
-      
-      
-      
-      
+
     
+
+    <main class="flex-row justify-space-between">
+      <h3 class="card-header text-uppercase"></h3>
+      <label class="form-label" for="location">Location</label>
+            <input name="location" id="restaurantLoc" type="text" autofocus="true" class="form-input" />
+          <button type="submit" class="btn"></button>
+    
+          
+            <h2 class="subtitle">Showing Results for: <span id="repo-search-term"></span></h2>
+            <div id="repos-container" class="list-group"></div>
+          
+    
+        </main>
+
+
+      
+      
+      
+        <section class="restNear">
+          <h3>Restaurants Near You</h3>
+          <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsmartcanucks.ca%2Fwp-content%2Fuploads%2F2016%2F01%2Ftoronto-restaurants.jpg&f=1&nofb=1" alt="Restaurant with a view" width="200" height="100">
+        </section>
+    
+
+
+        <section class="concNear">
+          <h3>Concerts In Your Region</h3>
+          <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.gannett-cdn.com%2F-mm-%2F624990f81b04c39a1111d95061805166d99bc821%2Fc%3D0-440-5362-3469%2Flocal%2F-%2Fmedia%2F2016%2F06%2F10%2FCincinnati%2FCincinnati%2F636011493624352995-052816-May-Fest-08.jpg%3Fwidth%3D3200%26height%3D1680%26fit%3Dcrop&f=1&nofb=1" alt="Beautiful Concert Hall" width="200" height="100">
+        </section>
+
+
+        <section class="brewNear">
+          <h3>Grab A Drink With Friends</h3>
+          <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fbrewpublic.com%2Fwp-content%2Fuploads%2F2016%2F10%2FA-lineup-of-2016-Fall-and-Winter-releases-from-Deschutes-Brewery..jpg&f=1&nofb=1" alt="Some high quality beers you could be enjoying with your friends" width="200" height="100">
+        </section>
 
 
 
