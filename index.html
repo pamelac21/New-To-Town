@@ -46,16 +46,17 @@
         </div>
     </nav>
 
-    
 
     <main class="flex-row justify-space-between">
       <h3 class="card-header text-uppercase"></h3>
       <label class="form-label" for="location">Location</label>
-            <input name="location" id="restaurantLoc" type="text" autofocus="true" class="form-input" />
+          <div>
+            <input name="location" id="restaurantLoc" placeholder="search" type="text" autofocus="true" class="form-input" />
+          </div>
           <button type="submit" class="btn"></button>
     
           
-            <h2 class="subtitle">Showing Results for: <span id="repo-search-term"></span></h2>
+            <h2 class="subtitle">Search Results: <span id="repo-search-term"></span></h2>
             <div id="repos-container" class="list-group"></div>
           
 
