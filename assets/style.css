@@ -14,13 +14,8 @@
 }
 
 .form-label {
-  height: 100vh;
-  background-image: linear-gradient(rgba(0,0,0,0.5)),url(pictures/imagess.jpg);
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-decoration: bold;
+  font-size: larger;
 }
 
 #restaurantLoc {
@@ -54,24 +49,20 @@
 .brewNear {
   margin-top: 150px;
 }
-
 * {
   box-sizing: border-box;
 }
-
 .column {
   float: left;
   width: 33.33%;
   padding: 5px;
   margin: auto;;
 }
-
 .row::after {
   content: "";
   display: table;
   clear: both;
 }
-
 .column img {
   height: 300px;
 }

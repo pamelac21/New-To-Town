@@ -37,10 +37,7 @@
               </ul>
             </div>
             <div class="top-bar-right">
-              <ul class="menu">
-                <li><input type="search" placeholder="Search"></li>
-                <li><button type="button" class="button">Search</button></li>
-              </ul>
+             
             </div>
           </div>
         </div>
@@ -50,9 +47,11 @@
     <main class="flex-row justify-space-between">
       <h3 class="card-header text-uppercase"></h3>
       <label class="form-label" for="location">Location</label>
-          <div>
-            <input name="location" id="restaurantLoc" placeholder="search" type="text" autofocus="true" class="form-input" />
+          <div class=“menu”>
+              <input type=“search” placeholder=“Search”>
+              <button onclick="myFunction()" type=“button” class=“button” id="searchZip">Search</button>            
           </div>
+         
           <button type="submit" class="btn"></button>
     
           
@@ -60,8 +59,6 @@
             <div id="repos-container" class="list-group"></div>
           
 
-
-    </main>
   
     <div class="row">
         <section class="column">
@@ -89,8 +86,10 @@
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfyBZUovAhbid8deqrPt3t_IauJvKXrsudtw&usqp=CAU" alt="bar" width="100%">
         </section>
       </div>
-
-
+    </main>
+    
+    <div id=“response-container-brew”></div>
+    <div id=“response-container-ticket”></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="assets\script.js"></script>
