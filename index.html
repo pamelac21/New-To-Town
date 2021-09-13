@@ -37,55 +37,59 @@
               </ul>
             </div>
             <div class="top-bar-right">
-              <ul class="menu">
-                <li><input type="search" placeholder="Search"></li>
-                <li><button type="button" class="button">Search</button></li>
-              </ul>
+             
             </div>
           </div>
         </div>
     </nav>
 
-    
 
     <main class="flex-row justify-space-between">
       <h3 class="card-header text-uppercase"></h3>
       <label class="form-label" for="location">Location</label>
-            <input name="location" id="restaurantLoc" type="text" autofocus="true" class="form-input" />
+          <div class=“menu”>
+              <input type=“search” placeholder=“Search”>
+              <button onclick="myFunction()" type=“button” class=“button” id="searchZip">Search</button>            
+          </div>
+         
           <button type="submit" class="btn"></button>
     
           
-            <h2 class="subtitle">Showing Results for: <span id="repo-search-term"></span></h2>
+            <h2 class="subtitle">Search Results: <span id="repo-search-term"></span></h2>
             <div id="repos-container" class="list-group"></div>
           
-    
 
+  
+    <div class="row">
+        <section class="column">
+          <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsmartcanucks.ca%2Fwp-content%2Fuploads%2F2016%2F01%2Ftoronto-restaurants.jpg&f=1&nofb=1" alt="Restaurant with a view" width="100%">
+        </section>
+          
+        <section class="column">  
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQygcbKBbRGOqSoxexlVE_neK4_VEn9tp9Mg&usqp=CAU" alt="Restaurant" width="100%">
+        </section>
+    
+        <section class="column">
+          <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.gannett-cdn.com%2F-mm-%2F624990f81b04c39a1111d95061805166d99bc821%2Fc%3D0-440-5362-3469%2Flocal%2F-%2Fmedia%2F2016%2F06%2F10%2FCincinnati%2FCincinnati%2F636011493624352995-052816-May-Fest-08.jpg%3Fwidth%3D3200%26height%3D1680%26fit%3Dcrop&f=1&nofb=1" alt="Beautiful Concert Hall" width="100%">
+        </section>
+        
+        <section class="column">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp6fxtvAkKjG82us5z_YU_fhtWPyQa_h3sfg&usqp=CAU" alt="rave" width="100%">
+        </section>
+
+
+        <section class="column">
+          <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fbrewpublic.com%2Fwp-content%2Fuploads%2F2016%2F10%2FA-lineup-of-2016-Fall-and-Winter-releases-from-Deschutes-Brewery..jpg&f=1&nofb=1" alt="Some high quality beers you could be enjoying with your friends" width="100%">
+        </section>
+
+        <section class="column">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfyBZUovAhbid8deqrPt3t_IauJvKXrsudtw&usqp=CAU" alt="bar" width="100%">
+        </section>
+      </div>
     </main>
-
-
-
-      
-      
-      
-        <section class="restNear">
-          <h3>Restaurants Near You</h3>
-          <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsmartcanucks.ca%2Fwp-content%2Fuploads%2F2016%2F01%2Ftoronto-restaurants.jpg&f=1&nofb=1" alt="Restaurant with a view" width="200" height="100">
-        </section>
     
-
-
-        <section class="concNear">
-          <h3>Concerts In Your Region</h3>
-          <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.gannett-cdn.com%2F-mm-%2F624990f81b04c39a1111d95061805166d99bc821%2Fc%3D0-440-5362-3469%2Flocal%2F-%2Fmedia%2F2016%2F06%2F10%2FCincinnati%2FCincinnati%2F636011493624352995-052816-May-Fest-08.jpg%3Fwidth%3D3200%26height%3D1680%26fit%3Dcrop&f=1&nofb=1" alt="Beautiful Concert Hall" width="200" height="100">
-        </section>
-
-
-        <section class="brewNear">
-          <h3>Grab A Drink With Friends</h3>
-          <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fbrewpublic.com%2Fwp-content%2Fuploads%2F2016%2F10%2FA-lineup-of-2016-Fall-and-Winter-releases-from-Deschutes-Brewery..jpg&f=1&nofb=1" alt="Some high quality beers you could be enjoying with your friends" width="200" height="100">
-        </section>
-
-
+    <div id=“response-container-brew”></div>
+    <div id=“response-container-ticket”></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="assets\script.js"></script>
