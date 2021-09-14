@@ -22,15 +22,15 @@ function myFunction() {
     
     let queryUrl = 'https://api.openbrewerydb.org/breweries?by_postal=' + searchZip + '&sort=type,name:asc'
     //fetch request using that input
-    fetch(queryUrl)
-    .then(function(response) { return response.json()})
-    .then(function(response) { console.log(response)})
+    fetch('https://api.openbrewerydb.org/breweries?by_postal=98826')
+    .then(response => response.json())
+    // .then(function(response) { console.log(response)})
        
         .then((response) => {
         //variable selecting div where content will be displayed
-        //const rcBrew = document.querySelector("#response-container-brew")
-        //clear div
-        let rcBrewHTML = `<ul><li>${response.website_url}</li>
+        // const rcBrew = document.querySelector("#response-container-brew")
+        console.log(response)
+        let rcBrewHTML = `<ul><li>${response[0].street}</li>
                             <li></li>
                             <li></li>
                             <li></li>
@@ -38,21 +38,24 @@ function myFunction() {
 
                             //for (let i = 0; i < response.list.length; i++) {}
 // Append the results to the DOM
-$('#response-container-brew').html(rcBrewHTML);
+$('#response-container-brew').html("<p>Testing</p>");
     //    var brewInfo = document.createElement('p')
     //    brewInfo.setAttribute('src', response.data._website_url)
 
-    //    rcBrew.appendChild(brewInfo)
+    //    rcBrew.appendChild(rcBrewHTML)
               
     //fetch request using that input
      fetch('https://app.ticketmaster.com/discovery/v2/events.json?postalCode=' + searchZip + '&apikey=SbkH1ltdeIub58BAAadKCyFaXfy7RKZa')
         .then(function(response) { return response.json()})
-        .then(function(response) { console.log(response)})
+        .then(function(response) {
+            // const rcTicket = document.querySelector('#response-container-ticket')
+        //clear div
+            var rcTicket = `<ul>${response._embedded.events}</ul>`
+            $("#response-container-ticket").html (rcTicket);
+        })
         //.then(data => {console.log(response.data._embedded_events)})
         //variable selecting div where content will be displayed
-        const rcTicket = document.querySelector("#response-container-ticket")
-        //clear div
-        rcTicket.innerHTML = `<ul>${response._embedded.events}</ul>`
+        
 
     //    var ticketInfo = document.createElement('p')
     //    ticketInfo.setAttribute('src', response_embedded.events)
