@@ -7,7 +7,7 @@ $(document).ready(function(){
             .then(data => console.log(data))
         
         //ticket
-        fetch('https://app.ticketmaster.com/discovery/v2/events.json?apikey=SbkH1ltdeIub58BAAadKCyFaXfy7RKZa')
+        fetch('https://app.ticketmaster.com/discovery/v2/events.json?postalCode=28146&apikey=SbkH1ltdeIub58BAAadKCyFaXfy7RKZa')
             .then(response => response.json())
             .then(data => console.log(data))
         }
@@ -18,7 +18,7 @@ $(document).ready(function(){
         function myFunction() {
         
             //variable to capture value of user input
-            var searchZip = document.querySelector('#searchZip').value
+            const searchZip = document.querySelector('#searchZip').value
             
             let queryUrl = 'https://api.openbrewerydb.org/breweries?by_postal=' + searchZip + '&sort=type,name:asc'
             //fetch request using that input
@@ -34,7 +34,12 @@ $(document).ready(function(){
                                     
         
                 for (let i = 0; i < 4; i++) {
-                    $("#response-container-brew").append(`<li>${response[i].street}</li>`)                    
+                    
+                    $("#response-container-brew").append(`<li>${response[i].name}</li>`)
+                    $("#response-container-brew").append(`<li>${response[i].phone}</li>`)
+                    $("#response-container-brew").append(`<li>${response[i].street}</li>`)
+                    $("#response-container-brew").append(`<li>${response[i].website_url}</li>`)
+                                     
                 }
         // Append the results to the DOM
         console.log($('#response-container-brew'))
@@ -43,24 +48,30 @@ $(document).ready(function(){
             //    brewInfo.setAttribute('src', response.data._website_url)
         
             //    rcBrew.appendChild(rcBrewHTML)
-                      
+            let ticketUrl = 'https://app.ticketmaster.com/discovery/v2/events.json?postalCode=' + searchZip + '&apikey=SbkH1ltdeIub58BAAadKCyFaXfy7RKZa'
             //fetch request using that input
-             fetch('https://app.ticketmaster.com/discovery/v2/events.json?postalCode=' + searchZip + '&apikey=SbkH1ltdeIub58BAAadKCyFaXfy7RKZa')
-                .then(function(response) { return response.json()})
-                .then(function(response) {
-                    // const rcTicket = document.querySelector('#response-container-ticket')
+             fetch(ticketUrl)
+                .then(response => response.json())
+                .then((response) => {
+                    console.log(response)
+                     const rcTicket = document.querySelector('#response-container-ticket')
                 //clear div
-                    var rcTicket = `<ul>${response._embedded.events}</ul>`
-                    $("#response-container-ticket").html (rcTicket);
-                })
-                //.then(data => {console.log(response.data._embedded_events)})
-                //variable selecting div where content will be displayed
+                for (let i = 0; i < 4; i++) {
+                    let imgContent = document.createElement('img')
+                    imgContent.setAttribute('src', response._embedded.events[i].images[0].url)
+                    
+                    $("#response-container-ticket").append(imgContent)
+                    $("#response-container-ticket").append(`<li>${response._embedded.events[i].name}</li>`)
+                    
+                    $("#response-container-ticket").append(`<li>${response._embedded.events[i].url}</li>`)
+                    $("#response-container-ticket").append(`<li>${response._embedded.events[i].place}</li>`)
+                                     
+                }
+
+                console.log($('#response-container-ticket'))
                 
-        
-            //    var ticketInfo = document.createElement('p')
-            //    ticketInfo.setAttribute('src', response_embedded.events)
-        
-            //    rcTicket.appendChild(ticketInfo)
+                })
+
         
             })}
             $("#searchZip").click(myFunction)
