@@ -20,21 +20,26 @@ $(document).ready(function(){
      function myFunction() {
         //variable to capture value of user input
         let searchZip = document.getElementById('placeholder').value
-        //let searchBtn = document.getElementById('searchBtn').addEventListener('click', myFunction())
+        
             //store
             localStorage.setItem('searchZip', searchZip)
             console.log(localStorage)
             
             
             
-            let queryUrl = 'https://api.openbrewerydb.org/breweries?by_postal=' + searchZip + '&sort=type,name:asc'
+            let queryUrl = ('https://api.openbrewerydb.org/breweries?by_postal=' + searchZip + '&sort=type,name:asc')
             //fetch request using that input
-            fetch(queryUrl)
+             fetch(queryUrl)
                 .then(response => response.json())
             
                
                 .then((response) => {
                 //variable selecting div where content will be displayed
+                //console.log(response)
+
+            if (response.length === 0) {
+                console.log('nada')
+            } else {
                 console.log(response)
                 const rcBrew = document.querySelector("#response-container-brew")
                 rcBrew.innerHTML = ''
@@ -46,13 +51,13 @@ $(document).ready(function(){
                     <li>${response[i].street}</li>
                     <li><a href="${response[i].website_url}">Brewery Website</a></li></ul>`)                   
                 }
-
+            }
                 console.log($('#response-container-brew'))
 
         
-            let ticketUrl = 'https://app.ticketmaster.com/discovery/v2/events.json?postalCode=' + searchZip + '&apikey=SbkH1ltdeIub58BAAadKCyFaXfy7RKZa'
+            let ticketUrl = ('https://app.ticketmaster.com/discovery/v2/events.json?postalCode=' + searchZip + '&mode=no-cors&apikey=SbkH1ltdeIub58BAAadKCyFaXfy7RKZa')
             //fetch request using that input
-             fetch(ticketUrl)
+              fetch(ticketUrl)
                 .then(response => response.json())
                 .then((response) => {
                 console.log(response)
@@ -77,6 +82,6 @@ $(document).ready(function(){
                 })
 
         
-            })}
+                })}
             $("#searchZip").click(myFunction)
 })
