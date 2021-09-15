@@ -1,6 +1,6 @@
 
 $(document).ready(function(){
-    function fetchData() {
+   function fetchData() {
         //brew
         fetch('https://api.openbrewerydb.org/breweries?by_postal=98826')
             .then(response => response.json())
@@ -13,58 +13,62 @@ $(document).ready(function(){
         }
         fetchData()
         
-        //onclick function for search zip
+    //$("#myModal").modal('show'); ????
+    
+    $("#searchZip").on('click', myFunction())
         
-        function myFunction() {
-        
-            //variable to capture value of user input
-            const searchZip = document.querySelector('#searchZip').value
+     function myFunction() {
+        //variable to capture value of user input
+        let searchZip = document.getElementById('placeholder').value
+        //let searchBtn = document.getElementById('searchBtn').addEventListener('click', myFunction())
+            //store
+            localStorage.setItem('searchZip', searchZip)
+            console.log(localStorage)
+            
+            
             
             let queryUrl = 'https://api.openbrewerydb.org/breweries?by_postal=' + searchZip + '&sort=type,name:asc'
             //fetch request using that input
             fetch(queryUrl)
-            .then(response => response.json())
-            // .then(function(response) { console.log(response)})
+                .then(response => response.json())
+            
                
                 .then((response) => {
                 //variable selecting div where content will be displayed
-                // const rcBrew = document.querySelector("#response-container-brew")
                 console.log(response)
-                let rcBrewHTML = '<ul><li>${response[0].street}</li></ul>'
-                                    
-        
+                const rcBrew = document.querySelector("#response-container-brew")
+                rcBrew.innerHTML = ''
+                
                 for (let i = 0; i < 4; i++) {
-                    
-                    $("#response-container-brew").append(`<li>${response[i].name}</li>`)
-                    $("#response-container-brew").append(`<li>${response[i].phone}</li>`)
-                    $("#response-container-brew").append(`<li>${response[i].street}</li>`)
-                    $("#response-container-brew").append(`<li>${response[i].website_url}</li>`)
-                                     
+
+                    $("#response-container-brew").append(`<ul><li>${response[i].name}</li>
+                    <li>Phone: ${response[i].phone}</li>
+                    <li>${response[i].street}</li>
+                    <li><a href="${response[i].website_url}">Brewery Website</a></li></ul>`)                   
                 }
-        // Append the results to the DOM
-        console.log($('#response-container-brew'))
-        // $('#response-container-brew').html(rcBrewHTML);
-            //    var brewInfo = document.createElement('p')
-            //    brewInfo.setAttribute('src', response.data._website_url)
+
+                console.log($('#response-container-brew'))
+
         
-            //    rcBrew.appendChild(rcBrewHTML)
             let ticketUrl = 'https://app.ticketmaster.com/discovery/v2/events.json?postalCode=' + searchZip + '&apikey=SbkH1ltdeIub58BAAadKCyFaXfy7RKZa'
             //fetch request using that input
              fetch(ticketUrl)
                 .then(response => response.json())
                 .then((response) => {
-                    console.log(response)
-                     const rcTicket = document.querySelector('#response-container-ticket')
-                //clear div
+                console.log(response)
+                    let rcTicket = document.querySelector('#response-container-ticket')
+                    rcTicket.innerHTML = ''
+    
                 for (let i = 0; i < 4; i++) {
+
                     let imgContent = document.createElement('img')
                     imgContent.setAttribute('src', response._embedded.events[i].images[0].url)
                     
-                    $("#response-container-ticket").append(imgContent)
-                    $("#response-container-ticket").append(`<li>${response._embedded.events[i].name}</li>`)
-                    
-                    $("#response-container-ticket").append(`<li>${response._embedded.events[i].url}</li>`)
-                    $("#response-container-ticket").append(`<li>${response._embedded.events[i].place}</li>`)
+                    $("#response-container-ticket").append((imgContent),
+                    `<ul>    
+                    <li>${response._embedded.events[i].name}</li>
+                    <li><a href="${response._embedded.events[i].url}">Event Website</a></li>
+                    <li>${response._embedded.events[i].pleaseNote}</li></ul>`)
                                      
                 }
 

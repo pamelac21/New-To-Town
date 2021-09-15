@@ -1,10 +1,6 @@
+
 .sticky-topbar {
   width: 100%;
-}
-
-.response-container-ticket.li.img {
-  justify-content: center;
-  max-height: 100px;
 }
 
 .header {
@@ -36,6 +32,21 @@ ul.menu {
   text-align: center;
 }
 
+h3 {
+  color: rgb(8, 58, 58);
+}
+#response-container-ticket img {
+  width: 50%;
+  margin-left: 20%;
+}
+#response-container-brew, #response-container-ticket {
+  width: 90%;
+}
+
+ul {
+  list-style: none;
+}
+
 #restaurantLoc {
   width: 50%;
   border: 1px solid grey;
@@ -53,6 +64,7 @@ ul.menu {
 }
 
 .subtitle {
+  color: wheat;
   font-size: 15px;
   margin-top: 12px;
   margin-bottom: 5px;
@@ -73,6 +85,10 @@ ul.menu {
 * {
   box-sizing: border-box;
 }
+body {
+  background-color: rgb(2, 2, 2);
+}
+
 .column {
   float: left;
   width: 33.33%;
@@ -87,6 +103,14 @@ ul.menu {
 .column img {
   height: 300px;
 }
+ul {
+  background-color: rgb(205, 207, 207);
+  justify-content: center;
+}
+
+ul li {
+  margin-left: 5px;
+}
 
 .marketing-site-content-section {
   display: -webkit-flex;
@@ -95,6 +119,9 @@ ul.menu {
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
+}
+ul.img {
+  justify-content: center;
 }
 
 .marketing-site-content-section .button.round {
@@ -147,6 +174,7 @@ ul.menu {
       -ms-flex-align: start;
           align-items: flex-start;
 }
+
 
 @media screen and (min-width: 40em) {
   .marketing-site-content-section .marketing-site-content-section-block {
