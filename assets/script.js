@@ -1,4 +1,19 @@
 $(document).ready(function () {
+//MODAL
+var modal = document.querySelector('.modal')
+
+
+
+function displayModal() {
+  modal.style.display = 'block'
+} displayModal()
+
+$(".startBtn").click(function hideModal() {
+  modal.style.display = 'none'
+  })
+
+
+
   function fetchData() {
     //brew
     fetch("https://api.openbrewerydb.org/breweries?by_postal=98826")
@@ -14,12 +29,11 @@ $(document).ready(function () {
   }
   fetchData();
 
-  //$("#myModal").modal('show'); ????
-  // $("#searchZip").on('click', myFunction())
+
   const searchBtn = document.querySelector('#searchZip')
 
 function myFunction(event) {
-  
+
     //variable to capture value of user input
     let searchZip = document.getElementById("placeholder").value;
     event.preventDefault()
@@ -95,5 +109,8 @@ function myFunction(event) {
           }});
       });
   }
+
   $("#searchZip").click(myFunction);
-})
+},
+)
+

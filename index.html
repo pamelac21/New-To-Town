@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/style.css" />
-    <title>Document</title>
+    <title>Find local brewery or events</title>
 </head>
 
 
@@ -31,22 +31,24 @@
                       <ul class="menu">
                         <li><input type="search" placeholder="Zip code" id="placeholder"></li>
                         <li><button type="button" class="button" id="searchZip">Search</button></li>
-               
-                        </ul>
+                      </ul>
                      
             </div>            
           </div>
         </div>
         
     </nav>
-
-              <!--search area-->      
- <!--             <ul class="menu">
-                <li><input type="search" placeholder="Zip code" id="placeholder"></li>
-                <li><button type="button" class="button" id="searchZip">Search</button></li>
-              </ul>
-            -->
-          
+<!--MODAL-->
+  <section class="modal">
+    <div class="modal-content menu">
+      <p>Click below if you are ready to find breweries and events in your area!</p>
+      <br>
+      <button class="startBtn"><i class="fas fa-grin-stars fa-lg"></i></button>
+      
+    </div>
+  </section>
+         
+<!--"search results"-->
     <h2 class="subtitle">Search Results: <span id="repo-search-term"></span></h2>
     <div id="repos-container" class="list-group"></div>
           
