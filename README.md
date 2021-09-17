@@ -26,14 +26,25 @@ Created a varibale that would display the data in a readable and easy to navigat
 
 ## BUILT WITH
 
+- HTML, CSS & JS
 - ZURB Foundation
 - Server-side APIs
 - Git branching workflow
 - Agile software development
+- Font Awesome
+- jQuery
 
 ## USUAGE
 
 The main usage for our web application, will be from users who have recently moved to a new area and are looking for fast and fun ways to integrate with their new found communities.
+
+## FUTURE DEVELOPMENT
+
+- Utilize a search method that will return more results.
+- Add some animation to the app.
+- Add more options for display and internal page links to accomodate the page length.
+- More streamlined look. Possible use of different CDNs.
+
 
 ## ROADMAP
 
