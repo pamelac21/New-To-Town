@@ -46,15 +46,14 @@ ul.menu {
   padding: 20px;
   width: 60%;
   height: 35%;
-  box-shadow: 0 8px 10px 0 rgb(8, 58, 58, 0.2), 0 10px 20px 0 rgb(8, 58, 58, 0.2);
-  
-
+  box-shadow: 0 8px 10px 0 rgb(8, 58, 58, 0.2),
+    0 10px 20px 0 rgb(8, 58, 58, 0.2);
 }
 
 .startBtn {
   font-size: 5em;
   transition-duration: 0.7s;
-  color:#f6f2f7
+  color: #f6f2f7;
 }
 
 .startBtn:hover {
@@ -64,7 +63,6 @@ ul.menu {
 .fa-grin-stars:before {
   padding: 8px;
 }
-
 
 .subtitle {
   text-align: center;
@@ -98,7 +96,6 @@ ul {
 body {
   background-color: rgb(2, 2, 2);
 }
-
 
 ul {
   background-color: rgb(205, 207, 207);
@@ -150,7 +147,6 @@ ul.img {
   .modal-content p {
     text-align: center;
   }
-  
 }
 
 @media screen and (min-width: 40em) {
