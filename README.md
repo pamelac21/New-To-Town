@@ -12,9 +12,17 @@ We added a modal to the introduction screen to introduce the user to our applica
 
 We then incorporated a function that fetched the ticketmaster and brewery data, from their respective API's, when the user types in their zip code to find social events and breweries around them.
 
-Implemented an if statement that displays an error message if the area code typed into the search box is invalid.
+Implemented an if statement that displays an error message if the zip code typed into the search bar returns no data.
 
 Created a varibale that would display the data in a readable and easy to navigate manner for the user on the web page.
+
+Made the links fetched by the APIs clickable, taking you to the correlating websites. Also, made the returned images a uniform size for aesthetic purposes.
+
+We saved the user input into localStorage and displayed the value in the label.
+
+Made the start up modal and main page responsive with media queries.
+
+
 
 ## FINAL PRODUCT
 
@@ -33,6 +41,7 @@ Created a varibale that would display the data in a readable and easy to navigat
 - Agile software development
 - Font Awesome
 - jQuery
+- Responsive framework
 
 ## USUAGE
 
