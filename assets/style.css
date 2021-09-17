@@ -73,10 +73,12 @@ ul.menu {
 h3 {
   color: rgb(8, 58, 58);
 }
+
 #response-container-ticket img {
   width: 50%;
   margin-left: 20%;
 }
+
 #response-container-brew,
 #response-container-ticket {
   width: 90%;
@@ -86,22 +88,6 @@ ul {
   list-style: none;
 }
 
-#restaurantLoc {
-  width: 50%;
-  border: 1px solid grey;
-  border-radius: 5px;
-  height: 35px;
-  padding: 2px 25px 2px 30px;
-  outline: bold;
-  background-color: #f5f5f5;
-}
-
-#restaurantLoc:hover,
-#restaurantLoc:focus {
-  border: 1.5px solid #009688;
-  background-color: white;
-}
-
 .subtitle {
   color: wheat;
   font-size: 15px;
@@ -109,38 +95,11 @@ ul {
   margin-bottom: 5px;
 }
 
-.restNear {
-  margin-top: 150px;
-}
-
-.concNear {
-  margin-top: 150px;
-}
-
-.brewNear {
-  margin-top: 150px;
-}
-* {
-  box-sizing: border-box;
-}
 body {
   background-color: rgb(2, 2, 2);
 }
 
-.column {
-  float: left;
-  width: 33.33%;
-  padding: 5px;
-  margin: auto;
-}
-.row::after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.column img {
-  height: 300px;
-}
+
 ul {
   background-color: rgb(205, 207, 207);
   justify-content: center;
@@ -158,6 +117,7 @@ ul li {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
+
 ul.img {
   justify-content: center;
 }
@@ -181,6 +141,7 @@ ul.img {
 .marketing-site-content-section .marketing-site-content-section-img img {
   width: 100%;
 }
+
 @media screen and (min-width: 985px) {
   .modal-content {
     justify-content: center;

@@ -1,18 +1,31 @@
 $(document).ready(function () {
-//MODAL
-var modal = document.querySelector('.modal')
+  console.log(localStorage);
 
+  //MODAL
+  var modal = document.querySelector(".modal");
+  function displayModal() {
+    modal.style.display = "block";
+  }
+  displayModal();
 
+  $(".startBtn").click(function hideModal() {
+    modal.style.display = "none";
+  });
 
-function displayModal() {
-  modal.style.display = 'block'
-} displayModal()
+  //display last zip code
+  if (localStorage.length >= 1) {
+    let lastZip = document.querySelector("#placeholder").value;
+    lastZip = "";
+    let storedZip = localStorage.getItem("searchZip", searchZip);
+    $("#placeholder").attr("value", storedZip);
+  }
 
-$(".startBtn").click(function hideModal() {
-  modal.style.display = 'none'
-  })
-
-
+  //function for enter key search
+  $("#placeholder").keyup(function (event) {
+    if (event.keyCode === 13) {
+      $("#searchZip").click();
+    }
+  });
 
   function fetchData() {
     //brew
@@ -29,88 +42,84 @@ $(".startBtn").click(function hideModal() {
   }
   fetchData();
 
-
-  const searchBtn = document.querySelector('#searchZip')
-
-function myFunction(event) {
-
+  function myFunction(event) {
+    const rcTicket = document.querySelector("#response-container-ticket");
+    const rcBrew = document.querySelector("#response-container-brew");
     //variable to capture value of user input
     let searchZip = document.getElementById("placeholder").value;
-    event.preventDefault()
+    event.preventDefault();
     //store
-    localStorage.setItem("searchZip", searchZip);
-    console.log(localStorage);
+    localStorage.setItem("searchZip" + localStorage.length, searchZip);
 
     let queryUrl =
       "https://api.openbrewerydb.org/breweries?by_postal=" +
       searchZip +
       "&sort=type,name:asc";
     //fetch request brews
-    fetch(queryUrl)
-      .then((response) => response.json())
+    fetch(queryUrl).then((response) =>
+      response
+        .json()
 
-      .then((response) => {
-        //variable selecting div where content will be displayed
-        //console.log(response)
+        .then((response) => {
+          if (response.length === 0) {
+            rcBrew.innerHTML = "";
+            $("#response-container-brew").append(`Sorry! None In Your Area`);
+            console.log("nada");
+          } else {
+            console.log(response);
+            const rcBrew = document.querySelector("#response-container-brew");
+            rcBrew.innerHTML = "";
 
-        if (response.length === 0) {
-          $("#response-container-brew")
-              .append(`Sorry! None In Your Area`)
-          console.log("nada");
-        } else {
-          console.log(response);
-          const rcBrew = document.querySelector("#response-container-brew");
-          rcBrew.innerHTML = "";
-
-          for (let i = 0; i < 4; i++) {
-            $("#response-container-brew")
-              .append(`<ul><li>${response[i].name}</li>
+            for (let i = 0; i < 4; i++) {
+              $("#response-container-brew")
+                .append(`<ul><li>${response[i].name}</li>
                     <li>Phone: ${response[i].phone}</li>
                     <li>${response[i].street}</li>
                     <li><a href="${response[i].website_url}">Brewery Website</a></li></ul>`);
+            }
           }
-        }
-        console.log($("#response-container-brew"));
+          console.log($("#response-container-brew"));
+        })
+    );
 
-        event.preventDefault()
-        let ticketUrl =
-          "https://app.ticketmaster.com/discovery/v2/events.json?postalCode=" +
-          searchZip +
-          "&mode=no-cors&apikey=SbkH1ltdeIub58BAAadKCyFaXfy7RKZa";
-        //fetch request ticketmaster
-        fetch(ticketUrl)
-          .then((response) => response.json())
-          .then((response) => {
-            if (!response._embedded) {
-              $("#response-container-ticket")
-                  .append(`Sorry! None In Your Area`)
-            console.log('nada');
-          } else {
-            let rcTicket = document.querySelector("#response-container-ticket");
-            rcTicket.innerHTML = "";
+    event.preventDefault();
+    let ticketUrl =
+      "https://app.ticketmaster.com/discovery/v2/events.json?postalCode=" +
+      searchZip +
+      "&mode=no-cors&apikey=SbkH1ltdeIub58BAAadKCyFaXfy7RKZa";
+    //fetch request ticketmaster
+    fetch(ticketUrl)
+      .then((response) => response.json())
+      .then((response) => {
+        if (!response._embedded) {
+          rcTicket.innerHTML = "";
+          $("#response-container-ticket").append(`Sorry! None In Your Area`);
+          console.log("nada");
+        } else {
+          let rcTicket = document.querySelector("#response-container-ticket");
+          rcTicket.innerHTML = "";
 
-            for (let i = 0; i < 4; i++) {
-              let imgContent = document.createElement("img");
-              imgContent.setAttribute(
-                "src",
-                response._embedded.events[i].images[0].url
-              );
+          for (let i = 0; i < 4; i++) {
+            let imgContent = document.createElement("img");
+            imgContent.setAttribute(
+              "src",
+              response._embedded.events[i].images[0].url
+            );
 
-              $("#response-container-ticket").append(
-                imgContent,
-                `<ul>    
+            $("#response-container-ticket").append(
+              imgContent,
+              `<ul>    
                     <li>${response._embedded.events[i].name}</li>
                     <li><a href="${response._embedded.events[i].url}">Event Website</a></li>
                     <li>${response._embedded.events[i].pleaseNote}</li></ul>`
-          );
-            }
-
-            console.log($("#response-container-ticket"));
-          }});
+            );
+          }
+          console.log(localStorage);
+          //console.log($("#response-container-ticket"));
+        }
       });
+
+    //window.localStorage.clear()
   }
-
   $("#searchZip").click(myFunction);
-},
-)
-
+});
