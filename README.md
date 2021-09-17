@@ -45,6 +45,8 @@ Made the start up modal and main page responsive with media queries.
 
 ## USUAGE
 
+Many zip codes may not display many results. If you want to get a good idea of what we were going for, you could try some from highly populated areas. Here are a few incase you don't feel like looking some up: 10001 - 90017 - 28715
+
 The main usage for our web application, will be from users who have recently moved to a new area and are looking for fast and fun ways to integrate with their new found communities.
 
 ## FUTURE DEVELOPMENT
