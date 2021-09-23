@@ -14,10 +14,7 @@ $(document).ready(function () {
 
   //display last zip code
   if (localStorage.length >= 1) {
-    let lastZip = document.querySelector("#placeholder").value;
-    lastZip = "";
-    let storedZip = localStorage.getItem("searchZip", searchZip);
-    $("#placeholder").attr("value", storedZip);
+    $("#placeholder").val(localStorage.getItem('searchZip'));
   }
 
   //function for enter key search
@@ -49,7 +46,7 @@ $(document).ready(function () {
     let searchZip = document.getElementById("placeholder").value;
     event.preventDefault();
     //store
-    localStorage.setItem("searchZip" + localStorage.length, searchZip);
+    localStorage.setItem("searchZip", searchZip);
 
     let queryUrl =
       "https://api.openbrewerydb.org/breweries?by_postal=" +

@@ -138,6 +138,16 @@ ul.img {
 .marketing-site-content-section .marketing-site-content-section-img img {
   width: 100%;
 }
+/*EDIT FOR I-5*/
+@media screen and (min-width: 985px) {
+  .modal-content {
+    justify-content: center;
+    flex-direction: column;
+  }
+  .modal-content p {
+    text-align: center;
+  }
+}
 
 @media screen and (min-width: 985px) {
   .modal-content {
