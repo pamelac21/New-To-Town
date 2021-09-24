@@ -14,7 +14,7 @@ $(document).ready(function () {
 
   //display last zip code
   if (localStorage.length >= 1) {
-    $("#placeholder").val(localStorage.getItem('searchZip'));
+    $("#placeholder").val(localStorage.getItem("searchZip"));
   }
 
   //function for enter key search
