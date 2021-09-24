@@ -40,6 +40,8 @@ ul.menu {
 }
 
 .modal-content {
+  
+  text-align: center;
   justify-content: center;
   background-image: linear-gradient(45deg, #fa8bff, #2bd2ff, #2bff88);
   margin: 15% auto;
@@ -51,7 +53,7 @@ ul.menu {
 }
 
 .startBtn {
-  font-size: 5em;
+  font-size: 3em;
   transition-duration: 0.7s;
   color: #f6f2f7;
 }
@@ -69,17 +71,23 @@ ul.menu {
 }
 
 h3 {
+  width: 100%;
+  text-align: center;
   color: rgb(8, 58, 58);
 }
 
 #response-container-ticket img {
-  width: 50%;
-  margin-left: 20%;
+  width: 100%;
+
+  text-align: center;
+  justify-content: center;
 }
 
 #response-container-brew,
 #response-container-ticket {
-  width: 90%;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
 }
 
 ul {
@@ -98,12 +106,14 @@ body {
 }
 
 ul {
-  background-color: rgb(205, 207, 207);
+  margin-left: auto;
+  text-align: center;
   justify-content: center;
+  overflow-wrap: break-word;
 }
 
 ul li {
-  margin-left: 5px;
+  margin-left: 0px;
 }
 
 .marketing-site-content-section {
@@ -113,6 +123,7 @@ ul li {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  align-content: center;
 }
 
 ul.img {
@@ -139,6 +150,28 @@ ul.img {
   width: 100%;
 }
 /*EDIT FOR I-5*/
+@media screen and (device-aspect-ratio: 40/71) {
+#response-container-ticket ul {
+  margin: 0px;
+  width: 100%;
+  overflow-wrap: break-word;
+}
+
+}
+/*EDIT FOR I-4*/
+@media screen and (device-aspect-ratio: 2/3) {
+  #response-container-ticket ul {
+    margin: 0px;
+    width: 100%;
+    overflow-wrap: break-word;
+  }
+ 
+}
+@media screen and (max-height: 350px) {
+.modal-content {
+  height: 100%;
+}}
+
 @media screen and (min-width: 985px) {
   .modal-content {
     justify-content: center;
@@ -149,14 +182,19 @@ ul.img {
   }
 }
 
-@media screen and (min-width: 985px) {
-  .modal-content {
-    justify-content: center;
-    flex-direction: column;
+@media screen and (max-width: 700px) {
+  body {
+    font-size: 70%;
   }
-  .modal-content p {
-    text-align: center;
+  body {
+    max-width: 99.99%;
   }
+}
+
+@media screen and (min-width: 750px) {
+#response-container-ticket img {
+  width: 60%;
+}
 }
 
 @media screen and (min-width: 40em) {
