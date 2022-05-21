@@ -6,6 +6,16 @@ As a person new to town, I want to be able to find local Breweries to fit my nee
 
 We want to create a user-friendly application that will allow users moving to a new area, or looking for more to do in their area, find bars and other forms of entertainment in their geographical areas. Our goal is to help people find fun and safe ways to engage with others in their community.
 
+## Table of Contents
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [Deployed Site](#final-product)
+- [Tech Used](#built-with)
+- [Contact](#contributing)
+- [Contributing](#contributing)
+- [License](#license)
+
 ## ABOUT THE PROJECT
 
 We added a modal to the introduction screen to introduce the user to our application.
@@ -61,7 +71,7 @@ The main usage for our web application, will be from users who have recently mov
 
 See the issues (GitHub) for a list of proposed changes.
 
-## AUTHORS
+## CONTRIBUTING
 
 - Matias A. ~ matiasahrensdorf@gmail.com
 - Celeste F. ~ celestefarris@hotmail.com
@@ -72,3 +82,8 @@ See the issues (GitHub) for a list of proposed changes.
 
 - Open Brewery DB
 - Ticket Master
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
